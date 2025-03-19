@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-// GenerateSudoku generates a Sudoku board with its solution
+// GenerateWithSolution generates a Sudoku board with its solution
 func GenerateWithSolution() (Grid, Grid) {
 	var board Grid
 	rand.Seed(time.Now().UnixNano())

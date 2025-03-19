@@ -5,6 +5,26 @@ import (
 	"time"
 )
 
+// GenerateSudoku generates a Sudoku board with its solution
+func GenerateWithSolution() (Grid, Grid) {
+	var board Grid
+	rand.Seed(time.Now().UnixNano())
+
+	// Fill diagonal 3x3 boxes
+	for i := 0; i < 9; i += 3 {
+		fillBox(&board, i, i)
+	}
+
+	Solve(&board) // Generate a fully solved board
+
+	// Making a copy before removing digits to keep the solution
+	solution := board
+
+	removeDigits(&board, 40) // Remove numbers to create a playable board
+
+	return board, solution
+}
+
 func Generate() Grid {
 	var grid Grid
 	rand.Seed(time.Now().UnixNano())

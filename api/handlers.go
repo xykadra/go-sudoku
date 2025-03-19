@@ -7,7 +7,24 @@ import (
 	"github.com/xykadra/go-sudoku/internal/sudoku"
 )
 
-func GenerateSudoku(w http.ResponseWriter, r *http.Request) {
+type GoSudokuResponseWithSolution struct {
+	Board    sudoku.Grid `json:"board"`
+	Solution sudoku.Grid `json:"solution"`
+}
+
+func GeneratSolve(w http.ResponseWriter, r *http.Request) {
+	board, solution := sudoku.GenerateWithSolution()
+
+	response := GoSudokuResponseWithSolution{
+		Board:    board,
+		Solution: solution,
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(response)
+}
+
+func Generate(w http.ResponseWriter, r *http.Request) {
 	grid := sudoku.Generate() // Calls the generator logic
 	response, _ := json.Marshal(grid)
 
@@ -16,7 +33,7 @@ func GenerateSudoku(w http.ResponseWriter, r *http.Request) {
 	w.Write(response)
 }
 
-func SolveSudoku(w http.ResponseWriter, r *http.Request) {
+func Solve(w http.ResponseWriter, r *http.Request) {
 	var request sudoku.Grid
 	json.NewDecoder(r.Body).Decode(&request)
 

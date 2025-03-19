@@ -9,8 +9,9 @@ import (
 func NewRouter() *mux.Router {
 	router := mux.NewRouter()
 
-	router.HandleFunc("/generate", api.GenerateSudoku).Methods("GET")
-	router.HandleFunc("/solve", api.SolveSudoku).Methods("POST")
+	router.HandleFunc("/generate-solve", api.GeneratSolve).Methods("GET")
+	router.HandleFunc("/generate", api.Generate).Methods("GET")
+	router.HandleFunc("/solve", api.Solve).Methods("POST")
 
 	return router
 }

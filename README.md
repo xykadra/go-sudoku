@@ -42,7 +42,7 @@ You can interact with the API via HTTP requests. The following is an example of 
 ### Example Request to Solve a Puzzle:
 
 ```bash
-curl -X POST https://sudokuapi.tech/solve \
+curl -X POST https://sudokuapi.tech/api/solve \
   -H "Content-Type: application/json" \
   -d '{
         "board": [

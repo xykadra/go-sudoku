@@ -78,7 +78,7 @@ go run cmd/main.go
 
 The API will be running locally on http://localhost:8080.
 Access the API:
-You can test the endpoints using ```bash curl``` or ```bash Postman```.
+You can test the endpoints using `curl` or `Postman`.
 Visit the live website at https://sudokuapi.tech for further details.
 
 # Technologies Used

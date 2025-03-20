@@ -9,7 +9,7 @@ import (
 func NewRouter() *mux.Router {
 	router := mux.NewRouter()
 
-	router.HandleFunc("/generate-solve", api.GeneratSolve).Methods("GET")
+	router.HandleFunc("/generate-solve", api.GenerateSolve).Methods("GET")
 	router.HandleFunc("/generate", api.Generate).Methods("GET")
 	router.HandleFunc("/solve", api.Solve).Methods("POST")
 

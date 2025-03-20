@@ -1,3 +1,6 @@
+
+<img width="1392" alt="Screenshot 2025-03-20 at 20 22 40" src="https://github.com/user-attachments/assets/c163e2ce-e98e-43f9-880f-c3b6d869ad4b" />
+
 # Go Sudoku Project
 
 This project is a full-stack solution for solving Sudoku puzzles, implemented in Go. The application provides three key functions for generating and solving Sudoku boards via an API. It is designed to generate new puzzles, solve existing ones, and provide solutions via a web interface.
